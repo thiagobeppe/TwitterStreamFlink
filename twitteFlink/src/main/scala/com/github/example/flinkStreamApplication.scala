@@ -21,7 +21,7 @@ object flinkStreamApplication {
       value.has("user") && value.get("lang").asText().equals("pt")
     })
       .filter(value => value.get("user").get("friends_count").asInt() > 10000)
-      .map(value => (value.get("user").get("name").asText(), value.get("user").get("screen_name").asText(), value.get("text").asText()))
+      .map(value => (value.get("text").asText()))
       .print()
 
     env.execute("Kafka Consumer")
