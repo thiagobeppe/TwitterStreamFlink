@@ -7,7 +7,6 @@ import org.apache.flink.streaming.api.scala._
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer
 import org.apache.flink.streaming.util.serialization.SimpleStringSchema
 import com.github.example.util.ElasticSearchConfig._
-import org.apache.http.HttpStatus
 
 object flinkStreamApplication {
   def main(args: Array[String]): Unit = {
@@ -23,7 +22,11 @@ object flinkStreamApplication {
       .filter(value => {
       value.has("user") && value.get("lang").asText().equals("pt")
     })
-      .map(value => (value.get("text").asText()))
+      .filter(value => value.get("user").get("friends_count").asInt() > 10000)
+      .map(value => {
+        if(value.has("extended_tweet")) value.get("extended_tweet").get("full_text").asText()
+        else value.get("text").asText()
+      })
       .map(value => insertText(value))
 
 

@@ -12,7 +12,7 @@ object TwitterStreamProducer extends App {
 
   //Create a loop to send msgs to kafka
   while(finishingLoop){
-    twitterStream.filter(new FilterQuery().track(Array("Bolsonaro", "Moro", "Presidencia")))
+    twitterStream.filter("Bolsonaro", "Moro", "Presidencia")
     Thread.sleep(150000)
     finishingLoop = false
   }
