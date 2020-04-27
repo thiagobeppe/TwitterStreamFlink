@@ -23,10 +23,8 @@ object flinkStreamApplication {
       .filter(value => {
       value.has("user") && value.get("lang").asText().equals("pt")
     })
-      .filter(value => value.get("user").get("friends_count").asInt() > 10000)
       .map(value => (value.get("text").asText()))
       .map(value => insertText(value))
-
 
 
 

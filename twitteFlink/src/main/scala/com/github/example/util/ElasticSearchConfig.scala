@@ -21,6 +21,24 @@ object ElasticSearchConfig {
     println(resp)
   }
 
+  def searchTweet(str: String = ""): SearchResponse ={
+    if(str == "") {
+      val resp = client.execute {
+        search("tweets")
+      }.await
+      resp.result
+    }
+    else {
+      val resp = client.execute {
+        search("tweets") query str
+      }.await
+      resp.result
+    }
+
+  }
+
+
+
   def searchAndCreateIndex() = {
     val indexName="tweets"
     if(client.execute{ indexExists(indexName)}.await.result.isExists){
