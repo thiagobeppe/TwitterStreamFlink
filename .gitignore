@@ -94,5 +94,8 @@ fabric.properties
 *.log
 *.metals
 
+#Adding Kafka Logs
+logs/kafka/*
+
 # End of https://www.gitignore.io/api/scala,intellij
 
