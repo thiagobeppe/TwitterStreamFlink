@@ -14,33 +14,21 @@ object ElasticSearchConfig {
 
   val client = ElasticClient(JavaClient(ElasticProperties(s"http://${host}:${port}")))
 
-  def createTweetIndex(): Unit ={
-    val resp = client.execute {
-      createIndex("Tweet").mapping(new MappingDefinition(fields = Seq[FieldDefinition] =()))
-    }.await
-
-    println(resp)
-  }
-
   def insertText(str : String): Unit = {
     val resp = client.execute {
-      indexInto("tweet").fields("tweetText" -> str).refresh(RefreshPolicy.Immediate)
+      indexInto("tweets").fields("tweet" -> str).refresh(RefreshPolicy.Immediate)
     }.await
     println(resp)
   }
 
-  def searchIndex(): Int = {
-    val resp = client.execute( search("tweet")).await
-
-    println("---- Search Results ----")
-    resp match {
-      case failure: RequestFailure => {
-        println("We failed " + failure.error)
-        HttpStatus.SC_BAD_REQUEST
-      }
-      case results: RequestSuccess[SearchResponse] => HttpStatus.SC_ACCEPTED
-      case results: RequestSuccess[_] => HttpStatus.SC_ACCEPTED
+  def searchAndCreateIndex() = {
+    val indexName="tweets"
+    if(client.execute{ indexExists(indexName)}.await.result.isExists){
+      client.execute{ deleteIndex(indexName)}.await
     }
+    val resp = client.execute(createIndex("tweets").mappings(mapping("_doc").fields(textField("tweet")))).await
+    println(resp)
+    resp.isSuccess
   }
 
 }

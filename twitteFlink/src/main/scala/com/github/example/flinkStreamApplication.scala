@@ -16,6 +16,7 @@ object flinkStreamApplication {
     env.setParallelism(1)
     val properties = new Properties()
     properties.setProperty("bootstrap.servers", "localhost:9092")
+    searchAndCreateIndex
     val stream = env
       .addSource(new FlinkKafkaConsumer[String]("TWEET_TOPIC_STREAM", new SimpleStringSchema(), properties))
       .map(value => jsonParser.readValue(value, classOf[JsonNode]))
@@ -24,11 +25,10 @@ object flinkStreamApplication {
     })
       .filter(value => value.get("user").get("friends_count").asInt() > 10000)
       .map(value => (value.get("text").asText()))
+      .map(value => insertText(value))
 
 
-    if(searchIndex().equals(HttpStatus.SC_BAD_REQUEST)) createTweetIndex()
 
-    println(searchIndex())
 
     env.execute("Kafka Consumer")
   }

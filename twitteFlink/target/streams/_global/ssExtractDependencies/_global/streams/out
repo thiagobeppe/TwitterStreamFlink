@@ -1,8 +1,24 @@
-[error] java.lang.RuntimeException: Conflicting cross-version suffixes in: com.typesafe.akka:akka-actor, com.sksamuel.elastic4s:elastic4s-core, com.fasterxml.jackson.module:jackson-module-scala, com.typesafe.akka:akka-stream, com.sksamuel.exts:exts, org.scala-lang.modules:scala-java8-compat, org.scala-lang.modules:scala-parser-combinators, com.typesafe:ssl-config-core
-[error] 	at scala.sys.package$.error(package.scala:30)
-[error] 	at sbt.librarymanagement.ConflictWarning$.processCrossVersioned(ConflictWarning.scala:39)
-[error] 	at sbt.librarymanagement.ConflictWarning$.apply(ConflictWarning.scala:19)
-[error] 	at sbt.Classpaths$.$anonfun$ivyBaseSettings$70(Defaults.scala:2483)
+[error] sbt.librarymanagement.ResolveException: Error downloading com.sksamuel.elastic4s:elastic4s-http_2.12:7.0.0
+[error]   Not found
+[error]   Not found
+[error]   not found: /home/tbeppe/.ivy2/local/com.sksamuel.elastic4s/elastic4s-http_2.12/7.0.0/ivys/ivy.xml
+[error]   not found: https://repo1.maven.org/maven2/com/sksamuel/elastic4s/elastic4s-http_2.12/7.0.0/elastic4s-http_2.12-7.0.0.pom
+[error]   not found: https://oss.sonatype.org/content/repositories/releases/com/sksamuel/elastic4s/elastic4s-http_2.12/7.0.0/elastic4s-http_2.12-7.0.0.pom
+[error] 	at lmcoursier.CoursierDependencyResolution.unresolvedWarningOrThrow(CoursierDependencyResolution.scala:247)
+[error] 	at lmcoursier.CoursierDependencyResolution.$anonfun$update$35(CoursierDependencyResolution.scala:216)
+[error] 	at scala.util.Either$LeftProjection.map(Either.scala:573)
+[error] 	at lmcoursier.CoursierDependencyResolution.update(CoursierDependencyResolution.scala:216)
+[error] 	at sbt.librarymanagement.DependencyResolution.update(DependencyResolution.scala:60)
+[error] 	at sbt.internal.LibraryManagement$.resolve$1(LibraryManagement.scala:52)
+[error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$12(LibraryManagement.scala:102)
+[error] 	at sbt.util.Tracked$.$anonfun$lastOutput$1(Tracked.scala:69)
+[error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$20(LibraryManagement.scala:115)
+[error] 	at scala.util.control.Exception$Catch.apply(Exception.scala:228)
+[error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11(LibraryManagement.scala:115)
+[error] 	at sbt.internal.LibraryManagement$.$anonfun$cachedUpdate$11$adapted(LibraryManagement.scala:96)
+[error] 	at sbt.util.Tracked$.$anonfun$inputChanged$1(Tracked.scala:150)
+[error] 	at sbt.internal.LibraryManagement$.cachedUpdate(LibraryManagement.scala:129)
+[error] 	at sbt.Classpaths$.$anonfun$updateTask0$5(Defaults.scala:2950)
 [error] 	at scala.Function1.$anonfun$compose$1(Function1.scala:49)
 [error] 	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:62)
 [error] 	at sbt.std.Transform$$anon$4.work(Transform.scala:67)
@@ -18,4 +34,9 @@
 [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 [error] 	at java.base/java.lang.Thread.run(Thread.java:834)
-[error] (ssExtractDependencies) Conflicting cross-version suffixes in: com.typesafe.akka:akka-actor, com.sksamuel.elastic4s:elastic4s-core, com.fasterxml.jackson.module:jackson-module-scala, com.typesafe.akka:akka-stream, com.sksamuel.exts:exts, org.scala-lang.modules:scala-java8-compat, org.scala-lang.modules:scala-parser-combinators, com.typesafe:ssl-config-core
+[error] (ssExtractDependencies) sbt.librarymanagement.ResolveException: Error downloading com.sksamuel.elastic4s:elastic4s-http_2.12:7.0.0
+[error]   Not found
+[error]   Not found
+[error]   not found: /home/tbeppe/.ivy2/local/com.sksamuel.elastic4s/elastic4s-http_2.12/7.0.0/ivys/ivy.xml
+[error]   not found: https://repo1.maven.org/maven2/com/sksamuel/elastic4s/elastic4s-http_2.12/7.0.0/elastic4s-http_2.12-7.0.0.pom
+[error]   not found: https://oss.sonatype.org/content/repositories/releases/com/sksamuel/elastic4s/elastic4s-http_2.12/7.0.0/elastic4s-http_2.12-7.0.0.pom
