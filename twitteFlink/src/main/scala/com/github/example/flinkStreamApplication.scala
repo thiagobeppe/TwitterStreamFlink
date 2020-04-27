@@ -2,10 +2,12 @@ package com.github.example
 
 import java.util.Properties
 
-import com.fasterxml.jackson.databind.{JsonNode,ObjectMapper}
+import com.fasterxml.jackson.databind.{JsonNode, ObjectMapper}
 import org.apache.flink.streaming.api.scala._
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer
 import org.apache.flink.streaming.util.serialization.SimpleStringSchema
+import com.github.example.util.ElasticSearchConfig._
+import org.apache.http.HttpStatus
 
 object flinkStreamApplication {
   def main(args: Array[String]): Unit = {
@@ -22,7 +24,11 @@ object flinkStreamApplication {
     })
       .filter(value => value.get("user").get("friends_count").asInt() > 10000)
       .map(value => (value.get("text").asText()))
-      .print()
+
+
+    if(searchIndex().equals(HttpStatus.SC_BAD_REQUEST)) createTweetIndex()
+
+    println(searchIndex())
 
     env.execute("Kafka Consumer")
   }
