@@ -5,7 +5,7 @@
 ---
 
 # Tecnologias
-* Java
+* Scala
 * Apache Flink
 * Apache Kafka
 * Twitter API
