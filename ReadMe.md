@@ -2,8 +2,6 @@
 **Projeto criado para fazer uma implementação em scala de um dos exercícios do curso [ Apache Flink | A Real Time & Hands-On course on Flink ](https://www.udemy.com/course/apache-flink-a-real-time-hands-on-course-on-flink/). Foram adicionados algumas features a mais como filtro pela quantidade de followers, inserção no elasticsearch e filtro para tratar o json de resposta da API**
 
 ---
-#### To see this ReadMe in english [click here](https://github.com/thiagobeppe/TwitterStreamExample/blob/master/READMEEN.md) :us:
----
 
 # Tecnologias
 * Java
