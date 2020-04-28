@@ -22,9 +22,10 @@ object flinkStreamApplication {
       .filter(value => {
       value.has("user") && value.get("lang").asText().equals("pt")
     })
-      .filter(value => value.get("user").get("friends_count").asInt() > 10000)
+      .filter(value => value.get("user").get("friends_count").asInt() > 1000)
       .map(value => {
-        if(value.has("extended_tweet")) value.get("extended_tweet").get("full_text").asText()
+        if(value.has("retweeted_status") && value.get("retweeted_status").has("extended_tweet")) value.get("retweeted_status").get("extended_tweet").get("full_text").asText()
+        else if(value.has("extended_tweet")) value.get("extended_tweet").get("full_text").asText()
         else value.get("text").asText()
       })
       .map(value => insertText(value))

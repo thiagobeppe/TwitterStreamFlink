@@ -18,6 +18,7 @@ object ElasticSearchConfig {
     val resp = client.execute {
       indexInto("tweets").fields("tweet" -> str).refresh(RefreshPolicy.Immediate)
     }.await
+    println(resp)
   }
 
   def searchTweet(str: String = ""): SearchResponse ={
