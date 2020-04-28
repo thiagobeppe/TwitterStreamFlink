@@ -34,11 +34,9 @@
 
 ---
 [1] Caso não queira colocar os valores como variável de ambiente pode-se colocar somente a String no arquivo ```com.github.example.util.utils``` na parte de configuração das keys.
-
 ![](images/ConfigTwitter)
 
 [2] Na tag ```ports```, o valor da esquerda é qual porta do seu computador você irá liberar para o docker mapear.
-
 ![](images/ports)
 
 [3] Criação do index.
