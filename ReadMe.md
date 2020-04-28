@@ -27,16 +27,32 @@
 
 # Como executar (Linux - Ubuntu)
 * Em seu terminal, navegue até a raíz do projeto e execute o comando "```./run.sh```" para começar a execução do projeto.
-* Para visualizar seus dados no ElasticSearch vá até ```localhost:5601``` Discover, crie um index [3] e abra a aba discover de novo que você verá os tweets inseridos
+* Para visualizar seus dados no ElasticSearch vá até ```localhost:5601```, na aba "Discover", crie um index [3] e abra na aba novamente que você verá os tweets inseridos.
 * Para finalizar a execução do programa feche os terminais que abriram com o ```run.sh``` e na pasta raíz do projeto, abra o terminal e execute ```docker-compose down --volumes```.
 
 
 ---
 [1] Caso não queira colocar os valores como variável de ambiente pode-se colocar somente a String no arquivo ```com.github.example.util.utils``` na parte de configuração das keys.
-![](images/ConfigTwitter)
+```
+val config = new twitter4j.conf.ConfigurationBuilder()
+    .setOAuthConsumerKey(System.getenv("TWITTER_CONSUMER_TOKEN_KEY"))
+    .setOAuthConsumerSecret(System.getenv("TWITTER_CONSUMER_TOKEN_SECRET"))
+    .setOAuthAccessToken(System.getenv("TWITTER_ACCESS_TOKEN_KEY"))
+    .setOAuthAccessTokenSecret(System.getenv("TWITTER_ACCESS_TOKEN_SECRET"))
+    .setTweetModeExtended(true)
+    .setJSONStoreEnabled(true)
+    .build
+```
 
 [2] Na tag ```ports```, o valor da esquerda é qual porta do seu computador você irá liberar para o docker mapear.
-![](images/ports)
+```
+zookeeper:
+    container_name: zookeeper
+    image: wurstmeister/zookeeper
+    restart: "always"
+    ports:
+      -  "2181:2181"
+```
 
 [3] Criação do index.
 
