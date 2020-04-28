@@ -1,4 +1,5 @@
 !/bin/bash
+sudo apt install figlet -y;
 figlet Docker!;
 sudo sysctl -w vm.max_map_count=262144 ;
 docker-compose up -d;
