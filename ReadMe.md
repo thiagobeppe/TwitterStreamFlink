@@ -18,6 +18,7 @@
 * Java 11 
 * [Docker](https://www.docker.com/) e [Docker-Compose](https://docs.docker.com/compose/install/)
 * [Scala](https://www.scala-lang.org/download/) (2.12.11)
+* [SBT](https://www.scala-sbt.org/download.html) (1.3.10)
 * Uma conta de desenvolvedor do [Twitter](https://developer.twitter.com/en)
 
 ---
