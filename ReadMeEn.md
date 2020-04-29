@@ -1,6 +1,6 @@
 
 # Doing a pipeline with Twitter, Flink and ElasticSearch
-**This project was created to make an implementation of an exercise proposed by the course [ Apache Flink | A Real Time & Hands-On course on Flink ](https://www.udemy.com/course/apache-flink-a-real-time-hands-on-course-on-flink/). More features was added like insertions on ElasticSearch and filters in a query to treat the API's response**
+**This project was created to make an implementation of an exercise proposed by the course [ Apache Flink | A Real Time & Hands-On course on Flink ](https://www.udemy.com/course/apache-flink-a-real-time-hands-on-course-on-flink/). More features was added like insertions on ElasticSearch and filters in a query to treat the API's response, The filters in the application search for "Bolsonaro" and "Moro", because there were a lot of political events at the time**
 
 ---
 

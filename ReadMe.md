@@ -1,6 +1,6 @@
 
 # Fazendo um pipeline usando Twitter, Flink e ElasticSearch
-**Projeto criado para fazer uma implementação em scala de um dos exercícios do curso [ Apache Flink | A Real Time & Hands-On course on Flink ](https://www.udemy.com/course/apache-flink-a-real-time-hands-on-course-on-flink/). Foram adicionados algumas features a mais como filtro pela quantidade de followers, inserção no elasticsearch e filtro para tratar o json de resposta da API**
+**Projeto criado para fazer uma implementação em scala de um dos exercícios do curso [ Apache Flink | A Real Time & Hands-On course on Flink ](https://www.udemy.com/course/apache-flink-a-real-time-hands-on-course-on-flink/). Foram adicionados algumas features a mais como filtro pela quantidade de followers, inserção no elasticsearch e filtro para tratar o json de resposta da API. Na busca de Tweets são procurar tweets com as palavras "Bolsonaro" e "Moro" devido a acontecimentos recentes em nosso cenário político.**
 
 ---
 #### To see this ReadMe in english [click here](https://github.com/thiagobeppe/TwitterStreamFlink/blob/master/ReadMeEn.md) :us:
