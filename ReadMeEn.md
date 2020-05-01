@@ -24,7 +24,7 @@
 ---
 # Attention
 * After your developer account was created you need to put your keys like an [Environment Variables](https://linuxize.com/post/how-to-set-and-list-environment-variables-in-linux/). **They need to have these names** (TWITTER_CONSUMER_TOKEN_KEY, TWITTER_CONSUMER_TOKEN_SECRET, TWITTER_ACCESS_TOKEN_KEY, TWITTER_ACCESS_TOKEN_SECRET) . [1]
-* Check if don't have any service running on the ports 2181, 5601, 9200 e 9092, else your docker-compose will not build the cointainer. If you can't kill the service you can change the port in ```docker-compose.yml``` [2].
+* Check if don't have any service running on the ports 2181, 5601, 9200 and 9092, else your docker-compose will not build the cointainer. If you can't kill the service you can change the port in ```docker-compose.yml``` [2].
 
 # How to run (Linux - Ubuntu)
 * In your terminal go to the root of the project and run the command "```./run.sh```" to start the application.
